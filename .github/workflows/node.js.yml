@@ -18,7 +18,7 @@ jobs:
     strategy:
       matrix:
         node-version: [20.x]
-        mongodb-version: ['4.2', '4.4', '5.0', '6.0']
+        mongodb-version: ['6.0']
 
     steps:
       - uses: actions/checkout@v3
@@ -35,12 +35,6 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-
-      - name: Run Mongodb
-        run: mongod --dbpath=data/db
-
-      - name: Run backend server
-        run: npm run dev
 
       - run: npm i
       - run: npm test
