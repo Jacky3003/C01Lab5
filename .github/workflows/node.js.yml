@@ -36,7 +36,9 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - run: npm run dev
+      - name: Run backend server
+        run: npm run dev
+        background: true
 
       - run: npm i
       - run: npm test
