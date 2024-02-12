@@ -29,7 +29,10 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        
+
+      - name: Check directory
+        run: ls -l 
+
       - name: Run Mongodb
         run: mongod --dbpath=data/db
 
