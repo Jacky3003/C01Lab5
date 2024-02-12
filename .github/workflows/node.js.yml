@@ -23,18 +23,9 @@ build:
     - uses: actions/checkout@v3
 
     - name: Use Node.js ${{ matrix.node-version }}
-      uses: actions/setup-node@v4
-      with:
-      node-version: ${{ matrix.node-version }}
-
-    - name: Install dependencies
-      run: npm install
-
-    - name: Run Mongodb
-      run: mongod --dbpath=data/db
-
-    - name: Run backend server
-      run: npm run dev
+        uses: actions/setup-node@v4
+        with:
+        node-version: ${{ matrix.node-version }}
 
     - run: npm i
     - run: npm test
