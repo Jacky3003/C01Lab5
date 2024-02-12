@@ -27,12 +27,16 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
+      - name: Use Mongodb 
+        uses: mongodb/setup-mongodb@v1
+        with:
+          mongodb-version: '4.4'
+          
+
       - name: Install dependencies
         run: npm install
 
-      - name: Check directory
-        run: ls -l 
-
+        
       - name: Run Mongodb
         run: mongod --dbpath=data/db
 
